@@ -1,8 +1,12 @@
 import React from 'react';
 
 import FormInput from '../form-input/form-input.components';
+import CustomButton from '../custom-button/custom-button.components';
+
+import { SignInWithGoogle } from '../../firebase/firebase.utils';
 
 import './sign-in.styles.scss'
+
 
 
 
@@ -50,7 +54,10 @@ handleChange = event => {
                label='Password'
                required
             />
-            <button>Submit</button>
+            <div className='buttons'>
+            <CustomButton type='submit'>Sign In</CustomButton>
+            <CustomButton onClick={SignInWithGoogle} isGoogleSignIn>Sign In with Google</CustomButton>
+            </div>
             </div>
         )
     }
